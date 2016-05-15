@@ -1,0 +1,7 @@
+- if @errors and @errors.any?
+  .alert.alert-danger
+    | Error:
+    ul
+      - @errors.full_messages.each do |message|
+        li
+          = message
