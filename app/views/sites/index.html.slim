@@ -9,6 +9,8 @@ table.table.table-bordered
       th
         | Name
       th
+        | Edit
+      th
         | Last updated
   tbody
     - @sites.each do |site|
@@ -16,10 +18,15 @@ table.table.table-bordered
         td
           = site.id
         td
-          a href=edit_site_path(site)
+          a href="#"
             = site.name
+        td
+          a.btn.btn-default.btn-sm href=edit_site_path(site)
+            i.glyphicon.glyphicon-pencil
+            | &nbsp;edit
         td
           = site.updated_at
 = paginate @sites
-br
+hr
 = link_to 'New Site', new_site_path, {:class=>"btn btn-primary"}
+hr
