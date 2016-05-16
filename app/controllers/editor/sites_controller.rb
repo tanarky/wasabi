@@ -1,4 +1,4 @@
-class SitesController < ApplicationController
+class Editor::SitesController < ApplicationController
   before_action :set_site, only: [:show, :edit, :update, :destroy]
 
   # GET /sites
@@ -23,7 +23,7 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       if @site.save
-        format.html { redirect_to sites_path, notice: 'Site was successfully created.' }
+        format.html { redirect_to editor_sites_path, notice: 'Site was successfully created.' }
         format.json { render :show, status: :created, location: @site }
       else
         @errors = @site.errors
@@ -38,7 +38,7 @@ class SitesController < ApplicationController
   def update
     respond_to do |format|
       if @site.update(site_params)
-        format.html { redirect_to edit_site_path(@site), notice: 'Site was successfully updated.' }
+        format.html { redirect_to editor_site_path(@site), notice: 'Site was successfully updated.' }
         format.json { render :show, status: :ok, location: @site }
       else
         @errors = @site.errors

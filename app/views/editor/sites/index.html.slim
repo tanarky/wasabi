@@ -21,12 +21,12 @@ table.table.table-bordered
           a href="#"
             = site.name
         td
-          a.btn.btn-default.btn-sm href=edit_site_path(site)
+          a.btn.btn-default.btn-sm href=edit_editor_site_path(site)
             i.glyphicon.glyphicon-pencil
             | &nbsp;edit
         td
           = site.updated_at
 = paginate @sites
 hr
-= link_to 'New Site', new_site_path, {:class=>"btn btn-primary"}
+= link_to 'New Site', new_editor_site_path, {:class=>"btn btn-primary"}
 hr

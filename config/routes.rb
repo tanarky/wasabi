@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  resources :sites
-  root 'sites#index'
+  namespace :editor do
+    resources :sites
+  end
+
+  # viewer
+  get ':path', to: 'application#show', constraints: { path: /.*/ }
 end
