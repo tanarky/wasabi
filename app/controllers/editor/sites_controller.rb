@@ -5,15 +5,23 @@ class Editor::SitesController < ApplicationController
   # GET /sites.json
   def index
     @sites = Site.all.page(params[:page]).per(params[:per_page])
+    render :layout => 'base'
+  end
+
+  def show
+    @pages = Page.all.where(site_id: @site.id)
+    @tags  = Tag.all.where(site_id: @site.id)
   end
 
   # GET /sites/new
   def new
     @site = Site.new
+    render :layout => 'base'
   end
 
   # GET /sites/1/edit
   def edit
+    render :layout => 'base'
   end
 
   # POST /sites
@@ -27,7 +35,7 @@ class Editor::SitesController < ApplicationController
         format.json { render :show, status: :created, location: @site }
       else
         @errors = @site.errors
-        format.html { render :new }
+        format.html { render :new, :layout => 'base' }
         format.json { render json: @site.errors, status: :unprocessable_entity }
       end
     end
@@ -38,23 +46,13 @@ class Editor::SitesController < ApplicationController
   def update
     respond_to do |format|
       if @site.update(site_params)
-        format.html { redirect_to editor_site_path(@site), notice: 'Site was successfully updated.' }
+        format.html { redirect_to edit_editor_site_path(@site), notice: 'Site was successfully updated.' }
         format.json { render :show, status: :ok, location: @site }
       else
         @errors = @site.errors
-        format.html { render :edit }
+        format.html { render :edit, :layout => 'base' }
         format.json { render json: @site.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /sites/1
-  # DELETE /sites/1.json
-  def destroy
-    @site.destroy
-    respond_to do |format|
-      format.html { redirect_to sites_url, notice: 'Site was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

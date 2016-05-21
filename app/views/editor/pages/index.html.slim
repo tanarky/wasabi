@@ -1,0 +1,31 @@
+h1
+  | Listing Pages
+= render 'notices'
+table.table.table-bordered
+  thead
+    tr
+      th
+        | ID
+      th
+        | Path
+      th
+        | Title
+      th
+        | Last updated
+  tbody
+    - @pages.each do |page|
+      tr
+        td
+          = page.id
+        td
+          a href=edit_editor_site_page_path(page.site_id, page.id)
+            = page.path
+        td
+          = page.title
+        td
+          = page.updated_at
+= paginate @pages
+hr
+= link_to 'New Page', new_editor_site_page_path, {:class=>"btn btn-primary"}
+hr
+= link_to 'Back to Sites', editor_site_path(params[:site_id])

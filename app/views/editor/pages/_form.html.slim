@@ -1,0 +1,17 @@
+= form_for [:editor, @site, @page] do |f|
+  = f.hidden_field :site_id, :value => params[:site_id]
+  .form-group
+    = f.label :path
+    = f.text_field :path, {:class=>"form-control"}
+  .form-group
+    = f.label :title
+    = f.text_field :title, {:class=>"form-control"}
+  .form-group
+    = f.label :content
+    = f.text_area :content, {:class=>"form-control"}
+  .actions
+    hr
+    .btn-group
+      = link_to 'Back', editor_site_pages_path, {:class=>"btn btn-default"}
+      = f.submit("Save", {:class=>"btn btn-primary"})
+    hr

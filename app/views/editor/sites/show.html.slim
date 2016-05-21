@@ -1,1 +1,53 @@
-= link_to 'Back', editor_sites_path
+.row
+  .col-md-8.highlight
+    h2
+      = link_to 'Pages', editor_site_pages_path(@site.id)
+    table.table.table-bordered
+      thead
+        tr
+          th
+            | ID
+          th
+            | Path
+          th
+            | Title
+          th
+            | Last updated
+      tbody
+        - @pages.each do |page|
+          tr
+            td
+              = page.id
+            td
+              = page.path
+            td
+              a href=editor_site_page_path(@site.id, page.id)
+                = page.title
+            td
+              = page.updated_at
+    h2 Binaries
+    h2
+      = link_to 'Tags', editor_site_tags_path(@site.id)
+    table.table.table-bordered
+      thead
+        tr
+          th
+            | ID
+          th
+            | Name
+          th
+            | Last updated
+      tbody
+        - @tags.each do |tag|
+          tr
+            td
+              = tag.id
+            td
+              a href=editor_site_tag_path(@site.id, tag.id)
+                = tag.name
+            td
+              = tag.updated_at
+
+    = link_to 'Back to sites', editor_sites_path
+  .col-md-4.highlight
+    = render 'site_menus'

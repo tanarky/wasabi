@@ -60,4 +60,6 @@ gem 'kaminari'
 gem 'seed-fu'
 gem 'validates_email_format_of'
 gem 'enumerize'
-gem 'kaminari'
+gem 'mysql2'
+
+gem 'wasabi_site_news', :git => 'git@github.com:tanarky/wasabi_site_news.git'

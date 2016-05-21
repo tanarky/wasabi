@@ -1,0 +1,40 @@
+.row
+  .col-md-8.highlight
+    h2 Pages
+    h2 Binaries
+    h2 Tags
+    = link_to 'tags index', editor_site_tags_path(@site.id)
+    table.table.table-bordered
+      thead
+        tr
+          th
+            | ID
+          th
+            | Name
+          th
+            | Last updated
+      tbody
+        - @tags.each do |tag|
+          tr
+            td
+              = tag.id
+            td
+              a href=editor_tags_path
+                = tag.name
+            td
+              = tag.updated_at
+
+    = link_to 'Back to sites', editor_sites_path
+  .col-md-4.highlight
+    h2
+      | Menus
+    ul
+      li
+        a href="#"
+          | pages
+      li
+        a href="#"
+          | bibaries
+      li
+        a href="#"
+          | tags
