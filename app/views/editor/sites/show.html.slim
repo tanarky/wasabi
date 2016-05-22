@@ -25,7 +25,22 @@
                 = page.title
             td
               = page.updated_at
-    h2 Binaries
+    h2
+      = link_to 'Binaries', editor_site_binaries_path(@site.id)
+    table.table.table-bordered
+      thead
+        tr
+          th
+            | Name
+          th
+            | Last updated
+      tbody
+        - @binaries.each do |binary|
+          tr
+            td
+              = binary.name
+            td
+              = binary.updated_at
     h2
       = link_to 'Tags', editor_site_tags_path(@site.id)
     table.table.table-bordered

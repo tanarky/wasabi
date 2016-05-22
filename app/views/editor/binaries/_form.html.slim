@@ -1,0 +1,20 @@
+= form_for [:editor, @site, @binary] do |f|
+  = f.hidden_field :site_id, :value => params[:site_id]
+  .form-group
+    = f.label :upload_file
+    = f.file_field :upload_file
+  .form-group
+    label 既に同名のデータが存在する場合
+    .radio
+      label.radio-inline
+        = radio_button :allow_update, 'binary', 'false', {:checked => true}
+        | 上書きしない
+      label.radio-inline
+        = radio_button :allow_update, 'binary', 'true', {}
+        | 上書きする
+  .actions
+    hr
+    .btn-group
+      = link_to 'Back', editor_site_binaries_path, {:class=>"btn btn-default"}
+      = f.submit("Save", {:class=>"btn btn-primary"})
+    hr

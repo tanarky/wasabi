@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521151036) do
+ActiveRecord::Schema.define(version: 20160522131235) do
+
+  create_table "binaries", force: :cascade do |t|
+    t.integer  "site_id",      limit: 4
+    t.string   "content_type", limit: 255
+    t.integer  "size",         limit: 4
+    t.string   "name",         limit: 255
+    t.binary   "data",         limit: 4294967295
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "binaries", ["site_id", "name"], name: "index_binaries_on_site_id_and_name", unique: true, using: :btree
 
   create_table "pages", force: :cascade do |t|
     t.integer  "site_id",    limit: 4

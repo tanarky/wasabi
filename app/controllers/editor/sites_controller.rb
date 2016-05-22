@@ -10,6 +10,7 @@ class Editor::SitesController < ApplicationController
 
   def show
     @pages = Page.all.where(site_id: @site.id)
+    @binaries = Binary.all.where(site_id: @site.id)
     @tags  = Tag.all.where(site_id: @site.id)
   end
 

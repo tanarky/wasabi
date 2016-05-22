@@ -1,0 +1,18 @@
+h2 Pages
+table.table.table-bordered
+  thead
+    tr
+      th
+        | ID
+      th
+        | Name
+      th
+        | Last updated
+  tbody
+    tr
+      td
+        = @page.id
+      td
+        = @page.path
+      td
+        = @page.updated_at
