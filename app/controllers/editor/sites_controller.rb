@@ -1,4 +1,5 @@
 class Editor::SitesController < ApplicationController
+  layout 'editor_site'
   before_action :set_site, only: [:show, :edit, :update, :destroy]
 
   # GET /sites

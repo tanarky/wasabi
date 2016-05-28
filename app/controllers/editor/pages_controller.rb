@@ -52,11 +52,11 @@ class Editor::PagesController < ApplicationController
   end
 
   private
-    def set_page
-      @page = Page.find(params[:id])
-      @site = @page.site
-    end
-    def page_params
-      params.require(:page).permit(:path, :title, :content, :site_id)
-    end
+  def set_page
+    @page = Page.find(params[:id])
+    @site = @page.site
+  end
+  def page_params
+    params.require(:page).permit(:name, :title, :content, :site_id)
+  end
 end

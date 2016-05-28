@@ -1,4 +1,4 @@
-= form_for(@tag, url: editor_site_tags_path) do |f|
+= form_for [:editor, @site, @tag] do |f|
   = f.hidden_field :site_id, :value => params[:site_id]
   .form-group
     = f.label :name

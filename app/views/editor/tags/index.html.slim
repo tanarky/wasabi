@@ -1,33 +1,40 @@
-h1
-  | Listing Tags
-= render 'notices'
-table.table.table-bordered
-  thead
-    tr
-      th
-        | ID
-      th
-        | Name
-      th
-        | Edit
-      th
-        | Last updated
-  tbody
-    - @tags.each do |tag|
-      tr
-        td
-          = tag.id
-        td
-          a href="#"
-            = tag.name
-        td
-          a.btn.btn-default.btn-sm href=edit_editor_site_tag_path(tag.site_id, tag.id)
-            i.glyphicon.glyphicon-pencil
-            | &nbsp;edit
-        td
-          = tag.updated_at
-= paginate @tags
-hr
-= link_to 'New Tag', new_editor_site_tag_path, {:class=>"btn btn-primary"}
-hr
-= link_to 'Back to Sites', editor_site_path(params[:site_id])
+.row
+  .col-md-12
+    .x_panel
+      .x_title
+        h2 Listing Tags
+        .clearfix
+      .x_content
+        = render 'notices'
+        .table-responsive
+          table.table.table-striped.jambo_table.bulk_action
+            thead
+              tr
+                th
+                  | ID
+                th
+                  | Name
+                th
+                  | Edit
+                th
+                  | Last updated
+            tbody
+              - @tags.each do |tag|
+                tr
+                  td
+                    = tag.id
+                  td
+                    a href="#"
+                      = tag.name
+                  td
+                    a.btn.btn-default.btn-sm href=edit_editor_site_tag_path(tag.site_id, tag.id)
+                      i.glyphicon.glyphicon-pencil
+                      | &nbsp;edit
+                  td
+                    = tag.updated_at
+        = paginate @tags
+
+      .btn-group
+        = link_to 'Back to Sites', editor_site_path(params[:site_id]), {:class=>"btn btn-default"}
+        = link_to 'New Tag', new_editor_site_tag_path, {:class=>"btn btn-primary"}
+      

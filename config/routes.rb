@@ -5,10 +5,21 @@ Rails.application.routes.draw do
       resources :pages
       resources :binaries, :only => [:index, :new, :create]
 
-      get 'binaries/(:name)', to: 'binaries#show', constraints: { name: /.*/}, as: 'binary_show'
+      
     end
   end
 
-  # viewer
-  get ':path', to: 'viewer#show', constraints: { path: /.*/ }
+  namespace :viewer do
+    get 'sites/(:site_name)/pages/(:page_name)',
+        to: 'pages#show',
+        constraints: { site_name: /[^\/]*/, page_name: /.*/},
+        as: 'page_show'
+    get 'sites/(:site_name)/binaries/(:binary_name)',
+        to: 'binaries#show',
+        constraints: { site_name: /[^\/]*/, binary_name: /.*/},
+        as: 'binary_show'
+  end
+
+  ## viewer
+  #get ':path', to: 'viewer#show', constraints: { path: /.*/ }
 end

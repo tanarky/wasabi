@@ -1,17 +1,20 @@
-= form_for [:editor, @site, @binary] do |f|
+= form_for [:editor, @site, @binary], html: {class: 'form-horizontal form-label-left'} do |f|
   = f.hidden_field :site_id, :value => params[:site_id]
   .form-group
-    = f.label :upload_file
-    = f.file_field :upload_file
+    = f.label :upload_file, {:class => 'control-label col-md-3 col-sm-3 col-xs-12'}
+    .col-md-6.col-sm-6.col-xs-12
+      = f.file_field :upload_file, {:class => 'form-control col-md-7 col-xs-12'}
   .form-group
-    label 既に同名のデータが存在する場合
-    .radio
-      label.radio-inline
-        = radio_button :allow_update, 'binary', 'false', {:checked => true}
-        | 上書きしない
-      label.radio-inline
-        = radio_button :allow_update, 'binary', 'true', {}
-        | 上書きする
+    label.control-label.col-md-3.col-sm-3.col-xs-12 既に同名のデータが存在する場合
+    .col-md-9.col-sm-9.col-xs-12
+      .radio
+        label
+          = radio_button :allow_update, 'binary', 'false', {:checked => true}
+          | 上書きしない
+      .radio
+        label
+          = radio_button :allow_update, 'binary', 'true', {}
+          | 上書きする
   .actions
     hr
     .btn-group

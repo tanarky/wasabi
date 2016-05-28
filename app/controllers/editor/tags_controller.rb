@@ -3,6 +3,7 @@ class Editor::TagsController < ApplicationController
   layout 'editor_site'
 
   def index
+    @site = Site.find_by_id(params[:site_id])
     @tags = Tag.all
             .where(site_id: params[:site_id])
             .page(params[:page])
@@ -13,13 +14,15 @@ class Editor::TagsController < ApplicationController
   end
 
   def new
-    @tag = Tag.new
+    @site = Site.find_by_id(params[:site_id])
+    @tag  = Tag.new
   end
 
   def edit
   end
 
   def create
+    @site = Site.find_by_id(params[:site_id])
     Rails.logger.info(tag_params)
     @tag = Tag.new(tag_params)
 
@@ -44,17 +47,19 @@ class Editor::TagsController < ApplicationController
         format.json { render :show, status: :ok, location: @tag }
       else
         @errors = @tag.errors
-        format.html { render :edit }
-        format.json { render json: @tag.errors, status: :unprocessable_entity }
+        format.html {render :edit}
+        format.json {render json: @tag.errors, status: :unprocessable_entity}
       end
     end
   end
 
   private
-    def set_tag
-      @tag = Tag.find(params[:site_id])
-    end
-    def tag_params
-      params.require(:tag).permit(:name, :site_id)
-    end
+  def set_tag
+    @site = Site.find_by_id(params[:site_id])
+    #@tag  = Tag.find_by_id(params[:id])
+    @tag  = Tag.find_by(site_id: @site.id, id: params[:id])
+  end
+  def tag_params
+    params.require(:tag).permit(:name, :site_id)
+  end
 end

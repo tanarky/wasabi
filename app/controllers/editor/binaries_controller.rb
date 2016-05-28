@@ -1,5 +1,4 @@
 class Editor::BinariesController < ApplicationController
-  #before_action :set_binary, only: [:show]
   layout 'editor_site'
 
   def index
@@ -14,16 +13,6 @@ class Editor::BinariesController < ApplicationController
   def new
     @site   = Site.find_by_id(params[:site_id])
     @binary = Binary.new
-  end
-
-  def show
-    site = Site.find_by_id(params[:site_id])
-    bin  = Binary.find_by(site_id: site.id, name: params[:name])
-    if bin
-      send_data bin.data, type: bin.content_type, :disposition => "inline"
-    else
-      raise ActionController::RoutingError.new('Not Found')
-    end
   end
 
   def create

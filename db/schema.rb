@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522131235) do
+ActiveRecord::Schema.define(version: 20160528132143) do
 
   create_table "binaries", force: :cascade do |t|
     t.integer  "site_id",      limit: 4
@@ -27,14 +27,14 @@ ActiveRecord::Schema.define(version: 20160522131235) do
 
   create_table "pages", force: :cascade do |t|
     t.integer  "site_id",    limit: 4
-    t.string   "path",       limit: 255
+    t.string   "name",       limit: 255
     t.string   "title",      limit: 255
     t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
 
-  add_index "pages", ["site_id", "path"], name: "index_pages_on_site_id_and_path", unique: true, using: :btree
+  add_index "pages", ["site_id", "name"], name: "index_pages_on_site_id_and_name", unique: true, using: :btree
 
   create_table "sites", force: :cascade do |t|
     t.string   "name",       limit: 255

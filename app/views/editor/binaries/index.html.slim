@@ -1,26 +1,32 @@
-h1
-  | Listing Binaries
-= render 'notices'
-table.table.table-bordered
-  thead
-    tr
-      th
-        | Thumbnail
-      th
-        | Name
-      th
-        | Last updated
-  tbody
-    - @binaries.each do |binary|
-      tr
-        td
-          img src=editor_site_binary_show_path(binary.site_id, binary.name) style="max-width:100px;max-height:100px;"
-        td
-          = binary.name
-        td
-          = binary.updated_at
-= paginate @binaries
-hr
-= link_to 'New Binary', new_editor_site_binary_path, {:class=>"btn btn-primary"}
-hr
-= link_to 'Back to Sites', editor_site_path(params[:site_id])
+.row
+  .col-md-12
+    .x_panel
+      .x_title
+        h2 Listing Binaries
+        .clearfix
+      .x_content
+        = render 'notices'
+        .table-responsive
+          table.table.table-striped.jambo_table.bulk_action
+            thead
+              tr
+                th
+                  | Thumbnail
+                th
+                  | Name
+                th
+                  | Last updated
+            tbody
+              - @binaries.each do |binary|
+                tr
+                  td
+                    img src=viewer_binary_show_path(@site.name, binary.name) style="max-width:100px;max-height:100px;"
+                  td
+                    = binary.name
+                  td
+                    = binary.updated_at
+          = paginate @binaries
+    .btn-group
+      = link_to 'Back to Sites', editor_site_path(params[:site_id]), {:class => 'btn btn-default'}
+      = link_to 'New Binary', new_editor_site_binary_path, {:class=>"btn btn-primary"}
+    hr

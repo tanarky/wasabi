@@ -4,3 +4,6 @@
 asset 'bootstrap'
 asset 'gentelella'
 asset 'font-awesome'
+
+asset 'bootstrap-sass-official'
+asset 'bootswatch'
