@@ -1,32 +1,39 @@
-h1
-  | Listing Sites
-= render 'notices'
-table.table.table-bordered
-  thead
-    tr
-      th
-        | ID
-      th
-        | Name
-      th
-        | Edit
-      th
-        | Last updated
-  tbody
-    - @sites.each do |site|
-      tr
-        td
-          = site.id
-        td
-          a href=editor_site_path(site)
-            = site.name
-        td
-          a.btn.btn-default.btn-sm href=edit_editor_site_path(site)
-            i.glyphicon.glyphicon-pencil
-            | &nbsp;edit
-        td
-          = site.updated_at
-= paginate @sites
-hr
-= link_to 'New Site', new_editor_site_path, {:class=>"btn btn-primary"}
-hr
+.row
+  .col-md-12
+    .x_panel
+      .x_title
+        h2
+          | Listing Sites
+        .clearfix
+      .x_content
+        = render 'notices'
+        .table-responsive
+          table.table.table-striped.jambo_table.bulk_action
+            thead
+              tr
+                th
+                  | ID
+                th
+                  | Name
+                th
+                  | Edit
+                th
+                  | Last updated
+            tbody
+              - @sites.each do |site|
+                tr
+                  td
+                    = site.id
+                  td
+                    a href=editor_site_path(site)
+                      = site.name
+                  td
+                    a.btn.btn-default.btn-sm href=edit_editor_site_path(site)
+                      i.glyphicon.glyphicon-pencil
+                      | &nbsp;edit
+                  td
+                    = site.updated_at
+        = paginate @sites
+    hr
+    = link_to 'New Site', new_editor_site_path, {:class=>"btn btn-primary"}
+    hr
