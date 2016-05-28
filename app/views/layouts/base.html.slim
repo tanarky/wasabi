@@ -1,17 +1,20 @@
 doctype html
 html
   head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1"
     title
       | Wasabi CMS
     = stylesheet_link_tag 'application', media: 'all'
     = csrf_meta_tags
-  body
-    .container
-      .row
-        .col-md-8.highlight
+  body.nav-md
+    .container.body
+      .main_container
+        .col-md-3.left_col
+          .left_col.scroll-view
+            = render 'site_logo'
+            = render 'sidebar_menu_global'
+        = render 'top_nav'
+        .right_col
           = yield
-        .col-md-4
-          br
-          img src="//placehold.it/300x250"
-    script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"
     = javascript_include_tag 'application'

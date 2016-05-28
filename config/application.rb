@@ -25,5 +25,7 @@ module Wasabi
 
     config.action_view.field_error_proc = Proc.new { |html_tag, instance|
       %Q(<span class="has-error">#{html_tag}</span>).html_safe }
+
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
   end
 end

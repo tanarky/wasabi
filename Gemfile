@@ -63,3 +63,4 @@ gem 'enumerize'
 gem 'mysql2'
 
 gem 'wasabi_site_news', :git => 'git@github.com:tanarky/wasabi_site_news.git'
+gem 'bower-rails'
