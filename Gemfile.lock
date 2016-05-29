@@ -1,9 +1,8 @@
-GIT
-  remote: git@github.com:tanarky/wasabi_site_news.git
-  revision: e72a2deab215fbc9cc00b3b31910ff1388b847ec
+PATH
+  remote: wasabi_site_scoop
   specs:
-    wasabi_site_news (0.0.5)
-      rails (~> 4.2)
+    wasabi_site_scoop (0.0.1)
+      rails (~> 4.2.6)
 
 GEM
   remote: https://rubygems.org/
@@ -258,7 +257,7 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   validates_email_format_of
-  wasabi_site_news!
+  wasabi_site_scoop!
   web-console (~> 2.0)
   whenever
 

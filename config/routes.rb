@@ -17,4 +17,6 @@ Rails.application.routes.draw do
         constraints: { site_name: /[^\/]*/, binary_name: /.*/},
         as: 'binary_show'
   end
+
+  mount WasabiSiteScoop::Engine => "/wasabi_site_scoop"
 end
