@@ -17,7 +17,4 @@ Rails.application.routes.draw do
         constraints: { site_name: /[^\/]*/, binary_name: /.*/},
         as: 'binary_show'
   end
-
-  ## viewer
-  #get ':path', to: 'viewer#show', constraints: { path: /.*/ }
 end
