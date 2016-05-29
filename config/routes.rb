@@ -4,8 +4,6 @@ Rails.application.routes.draw do
       resources :tags
       resources :pages
       resources :binaries, :only => [:index, :new, :create]
-
-      
     end
   end
 
