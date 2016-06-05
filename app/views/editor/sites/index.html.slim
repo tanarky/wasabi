@@ -1,14 +1,15 @@
-.row
-  .col-md-12
-    .x_panel
-      .x_title
-        h2
-          | Listing Sites
-        .clearfix
-      .x_content
-        = render 'notices'
-        .table-responsive
-          table.table.table-striped.jambo_table.bulk_action
+section.content-header
+  = render 'notices'
+  h1 Sites
+section.content
+  .box.box-default.color-palette-box
+    .box-header.with-border
+      i.fa.fa-cube
+      | all sites
+    .box-body
+      .row
+        .col-md-12
+          table.table.table-striped
             thead
               tr
                 th
@@ -33,6 +34,5 @@
                       | &nbsp;edit
                   td
                     = site.updated_at
-        = paginate @sites
-    = link_to 'New Site', new_editor_site_path, {:class=>"btn btn-primary"}
-    hr
+          = paginate @sites
+  = link_to 'New Site', new_editor_site_path, {:class=>"btn btn-primary"}

@@ -43,7 +43,7 @@ class Editor::TagsController < ApplicationController
   def update
     respond_to do |format|
       if @tag.update(tag_params)
-        format.html { redirect_to edit_editor_tag_path(@tag), notice: 'Tag was successfully updated.' }
+        format.html { redirect_to edit_editor_site_tag_path(@site, @tag), notice: 'Tag was successfully updated.' }
         format.json { render :show, status: :ok, location: @tag }
       else
         @errors = @tag.errors

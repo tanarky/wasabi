@@ -1,9 +1,11 @@
-.row
-  .col-xs-12.col-sm-12.col-md-12
-    .x_panel
-      .x_title
-        h2 New Binary
-        .clearfix
-      .x_content
-        = render 'errors'
-        = render 'form'
+section.content-header
+  = render 'notices'
+  h1 New Binary
+section.content
+  .box.box-default.color-palette-box
+    .box-header.with-border
+      i.fa.fa-cube
+      | List
+    .box-body
+      = render 'errors'
+      = render 'form'

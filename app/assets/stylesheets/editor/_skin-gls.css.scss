@@ -1,0 +1,160 @@
+/*
+ * Skin: Gls
+ * ----------
+ */
+$primary-color: #145fb0;
+$sub-color: #00C1FF;
+$link-color: #145fb0;
+$font-family: Meiryo, Arial, sans-serif;
+body.skin-gls {
+    font-family: $font-family;
+}
+.skin-gls .main-header .navbar {
+    background-color: $primary-color;
+}
+.skin-gls .main-header .navbar .nav > li > a {
+    color: #ffffff;
+}
+.skin-gls .main-header .navbar .nav > li > a:hover,
+.skin-gls .main-header .navbar .nav > li > a:active,
+.skin-gls .main-header .navbar .nav > li > a:focus,
+.skin-gls .main-header .navbar .nav .open > a,
+.skin-gls .main-header .navbar .nav .open > a:hover,
+.skin-gls .main-header .navbar .nav .open > a:focus,
+.skin-gls .main-header .navbar .nav > .active > a {
+    background: rgba(0, 0, 0, 0.1);
+    color: #f6f6f6;
+}
+.skin-gls .main-header .navbar .sidebar-toggle {
+    color: #ffffff;
+}
+.skin-gls .main-header .navbar .sidebar-toggle:hover {
+    color: #f6f6f6;
+    background: rgba(0, 0, 0, 0.1);
+}
+.skin-gls .main-header .navbar .sidebar-toggle {
+    color: #fff;
+}
+.skin-gls .main-header .navbar .sidebar-toggle:hover {
+}
+@media (max-width: 767px) {
+  .skin-gls .main-header .navbar .dropdown-menu li.divider {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .skin-gls .main-header .navbar .dropdown-menu li a {
+    color: #fff;
+  }
+  .skin-gls .main-header .navbar .dropdown-menu li a:hover {
+  }
+}
+.skin-gls .main-header .logo {
+    color: $sub-color;
+    border-bottom: 0 solid transparent;
+    font-family: $font-family;
+}
+.skin-gls .main-header .logo:hover {
+}
+.skin-gls .main-header li.user-header {
+}
+.skin-gls .content-header {
+    background: transparent;
+}
+.skin-gls .wrapper,
+.skin-gls .main-sidebar,
+.skin-gls .left-side {
+    background-color: #222d32;
+}
+.skin-gls .user-panel > .info,
+.skin-gls .user-panel > .info > a {
+  color: #fff;
+}
+.skin-gls .sidebar-menu > li.header {
+    color: #ddd;
+    background: #1a2226;
+}
+.skin-gls .sidebar-menu > li > a {
+    border-left: 3px solid transparent;
+}
+.skin-gls .sidebar-menu > li:hover > a,
+.skin-gls .sidebar-menu > li.active > a {
+    color: #ffffff;
+    border-left-color: $sub-color;
+}
+.skin-gls .sidebar-menu > li > .treeview-menu {
+    margin: 0 1px;
+    background: #2c3b41;
+}
+.skin-gls .sidebar a {
+    color: #b8c7ce;
+}
+.skin-gls .sidebar a:hover {
+    text-decoration: none;
+}
+.skin-gls .treeview-menu > li > a {
+    color: #8aa4af;
+}
+.skin-gls .treeview-menu > li.active > a,
+.skin-gls .treeview-menu > li > a:hover {
+    color: #ffffff;
+}
+.skin-gls .sidebar-form {
+    border-radius: 3px;
+    border: 1px solid #374850;
+    margin: 10px 10px;
+}
+.skin-gls .sidebar-form input[type="text"],
+.skin-gls .sidebar-form .btn {
+    box-shadow: none;
+    background-color: #374850;
+    border: 1px solid transparent;
+    height: 35px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.skin-gls .sidebar-form input[type="text"] {
+    color: #666;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px;
+}
+.skin-gls .sidebar-form input[type="text"]:focus,
+.skin-gls .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+    background-color: #fff;
+    color: #666;
+}
+.skin-gls .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+    border-left-color: #fff;
+}
+.skin-gls .sidebar-form .btn {
+    color: #999;
+    border-top-left-radius: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 0;
+}
+.skin-gls.layout-top-nav .main-header > .logo {
+    background-color: #3c8dbc;
+    color: #ffffff;
+    border-bottom: 0 solid transparent;
+}
+.skin-gls.layout-top-nav .main-header > .logo:hover {
+    //background-color: #3b8ab8;
+}
+.skin-gls .btn-primary {
+    background-color: $primary-color;
+    color: #fff;
+}
+.skin-gls .btn-default {
+    background-color: #fff;
+}
+.skin-gls .btn-primary:hover {
+    background-color: darken($primary-color, 10%);
+}
+.skin-gls a {
+    color: $link-color;
+}
+.skin-gls .box-default {
+    border-top-color: $sub-color;
+}

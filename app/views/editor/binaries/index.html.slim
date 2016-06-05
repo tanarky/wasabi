@@ -1,13 +1,15 @@
-.row
-  .col-md-12
-    .x_panel
-      .x_title
-        h2 Listing Binaries
-        .clearfix
-      .x_content
-        = render 'notices'
-        .table-responsive
-          table.table.table-striped.jambo_table.bulk_action
+section.content-header
+  = render 'notices'
+  h1 Binaries
+section.content
+  .box.box-default.color-palette-box
+    .box-header.with-border
+      i.fa.fa-cube
+      | List
+    .box-body
+      .row
+        .col-md-12
+          table.table.table-striped
             thead
               tr
                 th
@@ -26,7 +28,6 @@
                   td
                     = binary.updated_at
           = paginate @binaries
-    .btn-group
-      = link_to 'Back to Sites', editor_site_path(params[:site_id]), {:class => 'btn btn-default'}
-      = link_to 'New Binary', new_editor_site_binary_path, {:class=>"btn btn-primary"}
-    hr
+  .btn-group
+    = link_to 'Back to Sites', editor_site_path(params[:site_id]), {:class => 'btn btn-default'}
+    = link_to 'New Binary', new_editor_site_binary_path, {:class=>"btn btn-primary"}

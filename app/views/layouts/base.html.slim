@@ -7,14 +7,15 @@ html
       | Wasabi CMS
     = stylesheet_link_tag 'editor/application', media: 'all'
     = csrf_meta_tags
-  body.nav-md
-    .container.body
-      .main_container
-        .col-md-3.left_col
-          .left_col.scroll-view
-            = render 'site_logo'
-            = render 'sidebar_menu_global'
+  body.sidebar-mini.skin-gls
+    .wrapper
+      header.main-header
+        = render 'site_logo'
         = render 'top_nav'
-        .right_col
-          = yield
+      aside.main-sidebar
+        = render 'sidebar_menu_global'
+      .content-wrapper
+        = yield
+      footer.main-footer
+        | Copyright 2016 tanarky. All rights reserved.
     = javascript_include_tag 'application'

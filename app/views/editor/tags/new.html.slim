@@ -1,4 +1,11 @@
-h1
-  | New Tag
-= render 'errors'
-= render 'form'
+section.content-header
+  = render 'notices'
+  h1 New tag
+section.content
+  .box.box-default.color-palette-box
+    .box-header.with-border
+      i.fa.fa-cube
+      | Form
+    .box-body
+      = render 'errors'
+      = render 'form'

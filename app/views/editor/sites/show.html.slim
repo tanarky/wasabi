@@ -1,13 +1,15 @@
-.row
-  .col-md-12
-    .x_panel
-      .x_title
-        h2
-          = link_to 'Pages', editor_site_pages_path(@site.id)
-        .clearfix
-      .x_content
-        .table-responsive
-          table.table.table-striped.jambo_table.bulk_action
+section.content-header
+  = render 'notices'
+  h1 Site
+section.content
+  .box.box-default.color-palette-box
+    .box-header.with-border
+      i.fa.fa-cube
+      = link_to 'Pages', editor_site_pages_path(@site.id)
+    .box-body
+      .row
+        .col-md-12
+          table.table.table-striped
             thead
               tr
                 th
@@ -26,19 +28,19 @@
                   td
                     = page.name
                   td
-                    a href=editor_site_page_path(@site.id, page.id)
+                    a href=edit_editor_site_page_path(@site.id, page.id)
                       = page.title
                   td
                     = page.updated_at
-  .col-md-12
-    .x_panel
-      .x_title
-        h2
-          = link_to 'Binaries', editor_site_binaries_path(@site.id)
-        .clearfix
-      .x_content
-        .table-responsive
-          table.table.table-striped.jambo_table.bulk_action
+
+  .box.box-default.color-palette-box
+    .box-header.with-border
+      i.fa.fa-cube
+      = link_to 'Binaries', editor_site_binaries_path(@site.id)
+    .box-body
+      .row
+        .col-md-12
+          table.table.table-striped
             thead
               tr
                 th
@@ -52,15 +54,15 @@
                     = binary.name
                   td
                     = binary.updated_at
-  .col-md-12
-    .x_panel
-      .x_title
-        h2
-          = link_to 'Tags', editor_site_tags_path(@site.id)
-        .clearfix
-      .x_content
-        .table-responsive
-          table.table.table-striped.jambo_table.bulk_action
+
+  .box.box-default.color-palette-box
+    .box-header.with-border
+      i.fa.fa-cube
+      = link_to 'Tags', editor_site_tags_path(@site.id)
+    .box-body
+      .row
+        .col-md-12
+          table.table.table-striped
             thead
               tr
                 th
@@ -75,10 +77,10 @@
                   td
                     = tag.id
                   td
-                    a href=editor_site_tag_path(@site.id, tag.id)
+                    a href=edit_editor_site_tag_path(@site.id, tag.id)
                       = tag.name
                   td
                     = tag.updated_at
-          
-    = link_to 'Back to Sites index', editor_sites_path, {:class => 'btn btn-default'}
-    hr
+
+  = link_to 'Back to Sites index', editor_sites_path, {:class => 'btn btn-default'}
+

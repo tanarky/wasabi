@@ -1,5 +1,11 @@
-h1
-  | Editing Site
-= render 'notices'
-= render 'errors'
-= render 'form'
+section.content-header
+  = render 'notices'
+  h1 Edit tag
+section.content
+  .box.box-default.color-palette-box
+    .box-header.with-border
+      i.fa.fa-cube
+      | Form
+    .box-body
+      = render 'errors'
+      = render 'form'
