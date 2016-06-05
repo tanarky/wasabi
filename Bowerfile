@@ -1,9 +1,6 @@
 # A sample Bowerfile
 # Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
 
-asset 'bootstrap'
-asset 'gentelella'
+asset 'jquery'
+asset 'adminlte'
 asset 'font-awesome'
-
-asset 'bootstrap-sass-official'
-asset 'bootswatch'

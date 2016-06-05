@@ -11,10 +11,9 @@
  * file per style scope.
  *
  *= require_tree .
- *= require_self
- *= require bootstrap/dist/css/bootstrap.min.css
- *= require gentelella/production/css/custom.css
+ *= require adminlte/bootstrap/css/bootstrap
+ *= require adminlte/dist/css/AdminLTE
+ *= require adminlte/dist/css/skins/skin-blue
  *= require font-awesome/css/font-awesome.css
+ *= require_self
  */
-
-//@import "styles";
