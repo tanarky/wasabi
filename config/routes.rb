@@ -18,6 +18,5 @@ Rails.application.routes.draw do
         as: 'binary_show'
   end
 
-  ## viewer
-  #get ':path', to: 'viewer#show', constraints: { path: /.*/ }
+  mount WasabiSiteScoop::Engine => "/wasabi_site_scoop"
 end

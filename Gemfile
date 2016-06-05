@@ -60,6 +60,6 @@ gem 'seed-fu'
 gem 'validates_email_format_of'
 gem 'enumerize'
 gem 'mysql2'
-
-gem 'wasabi_site_news', :git => 'git@github.com:tanarky/wasabi_site_news.git'
 gem 'bower-rails'
+
+gem 'wasabi_site_scoop', path: "wasabi_site_scoop"
